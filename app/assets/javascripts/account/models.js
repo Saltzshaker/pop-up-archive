@@ -60,21 +60,24 @@ angular.module('Directory.account.models', [])
         case 'community':
         case '10_professional_mo':
         case '10_professional_yr':
-        case '15_small_business_mo':
-        case '15_small_business_yr':
+        case '10_small_business_mo':
+        case '10_small_business_yr':
           $rootScope.plans.push(plan);
       }
     });
   });
 
-  $rootScope.toggleInterval = function () {
+  $rootScope.longInterval = false;
+
+  $rootScope.togglePlans = function () {
     $rootScope.interval = ( $rootScope.interval == 'year' ? 'month' : 'year');
+    $rootScope.longInterval = !$rootScope.longInterval;
   };
 
   $rootScope.isPremiumPlan = function (plan) {
     switch(plan.id){
-      case '15_small_business_mo':
-      case '15_small_business_yr':
+      case '10_small_business_mo':
+      case '10_small_business_yr':
       case 'enterprise':
         return true;
     }

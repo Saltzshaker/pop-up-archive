@@ -1,7 +1,15 @@
 #pricing
   .row-fluid
     .row-fluid
-      select.pull-right ng-model='interval' ng-options="interval as intervalName for (interval, intervalName) in {month: 'Monthly Plans', year: 'Annual Plans'}" 
+      / select.pull-right ng-model='interval' ng-options="interval as intervalName for (interval, intervalName) in {month: 'Monthly Plans', year: 'Annual Plans'}" 
+
+      a.pull-right ng-click="togglePlans()"
+        |{{!longInterval && 'Get 10% off when you sign up for a yearly plan.' || 'Return to monthly plans.' }}
+
+      / p.pull-right 
+      /   | Get 10% off with our 
+      /   a ng-click="selectInterval('year')" Yearly Plans
+      /   a.pull-right ng-click="selectInterval('month')" Monthly
     .row-fluid.parent
       .plan-well.span3 ng-repeat="plan in plans | filter: {'interval': interval} | orderBy:'amount' | limitTo: 4" ng-class="{current: isCurrentPlan(plan), selected: isSelectedPlan(plan), disabled: isDisabled(plan.name)}" ng-click="isDisabled(plan.name) ||changePlan(plan)"
           // p ng-show="isCurrentPlan(plan)" Current Plan

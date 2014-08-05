@@ -58,8 +58,8 @@ angular.module('Directory.account.models', [])
     plans.forEach(function(plan){
       switch(plan.id){
         case 'community':
-        case '10_professional_mo':
-        case '10_professional_yr':
+        case '5_professional_mo':
+        case '5_professional_yr':
         case '10_small_business_mo':
         case '10_small_business_yr':
           $rootScope.plans.push(plan);

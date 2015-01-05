@@ -45,12 +45,24 @@ angular.module('Directory.items.controllers', ['Directory.loader', 'Directory.us
 
   $scope.clickDonate = function () {
     mixpanel.track(
-      "Donation Button Clicked"
+      "Donation Button Clicked",{
+          "User": $scope.currentUser.name + ' ' + $scope.currentUser.email
+          }
     );
   };
+
   $scope.clickPromote = function() {
     mixpanel.track(
-      "Promote Button Clicked"
+      "Promote Button Clicked",{
+          "User": $scope.currentUser.name + ' ' + $scope.currentUser.email
+          }
+    );
+  };
+  $scope.clickReprocess = function() {
+    mixpanel.track(
+      "Reprocess Button Clicked",{
+          "User": $scope.currentUser.name + ' ' + $scope.currentUser.email
+          }
     );
   };
 

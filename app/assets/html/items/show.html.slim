@@ -107,7 +107,7 @@ meta view-head="view-head" property="og:type" content="article"
           i.icon-question-sign ng-show="audioFile.transcriptType == 'Premium'" style="margin-left:2px; margin-bottom:2px; margin-right:8px;" bs-popover="itemHelp['premiumTranscript']" data-placement="bottom"
 
           //Reprocess as Premium button
-          button.btn.ts-upgrade id="premium-ondemand-{{audioFile.id}}" ng-show="currentUser.canEdit(item) && audioFile.transcriptType == 'Basic' && !audioFile.premiumInProgress && audioFile.duration" ng-click="orderPremiumTranscript(audioFile, $event)" ng-click="clickReprocess" title="Your cost: {{audioFile.premiumRetailCost}}"
+          button.btn.ts-upgrade id="premium-ondemand-{{audioFile.id}}" ng-show="currentUser.canEdit(item) && audioFile.transcriptType == 'Basic' && !audioFile.premiumInProgress && audioFile.duration" ng-click="orderPremiumTranscript(audioFile, $event)" title="Your cost: {{audioFile.premiumRetailCost}}"
             i.icon-star-empty
             |  Reprocess as Premium
           button.btn.ts-upgrade id="premium-ondemand-{{audioFile.id}}" ng-show="audioFile.transcriptType == 'Basic' && audioFile.premiumInProgress" ng-disabled="true"

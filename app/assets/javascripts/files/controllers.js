@@ -29,7 +29,6 @@ angular.module('Directory.files.controllers', ['fileDropzone', 'Directory.alerts
       });
 
       // var show = $cookies.exitSurvey;
-
       // if (!warn && (!show || (show != 't'))) {
       //   warn = "Before you go, will you please stay long enough to answer a couple of questions?";
       //   e.returnValue = warn;
